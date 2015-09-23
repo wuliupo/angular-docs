@@ -565,11 +565,24 @@ angular.module('versions', [])
     $window.location = url;
   };
 }]);
-angular.element(document).ready(function () {
-	angular.forEach(angular.element(document).find('a'), function(a){
-		if(a.href.indexOf(location.host) < 0){
-			a.target = '_blank';
-			a.nofollow = 'nofollow';
-		}
+
+(function() {
+	var models = /(#!\/|api|guide|misc|tutorial|error|index[^\.]*\.html).*$/g, result, appPath, official = 'https://docs.angularjs.org/', href = location.href.substring(7);
+	models.lastIndex = 0;
+	while (result = models.exec(href)) {
+	   appPath = href.substring(href.indexOf('/'), models.lastIndex - result[0].length);
+	   break;
+	}
+	angular.element(document).ready(function () {
+		angular.forEach(angular.element(document).find('a'), function (a) {
+			if(a.href === official){
+				a.href = appPath + 'api';
+			} if(appPath && a.href.indexOf(official) === 0){
+				a.href = a.href.replace(official, appPath);
+			} else if (a.href.indexOf(location.host) < 0){
+				a.target = '_blank';
+				a.nofollow = 'nofollow';
+			}
+		});
 	});
-});
+})();
