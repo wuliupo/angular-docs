@@ -565,3 +565,11 @@ angular.module('versions', [])
     $window.location = url;
   };
 }]);
+angular.element(document).ready(function () {
+	angular.forEach(angular.element(document).find('a'), function(a){
+		if(a.href.indexOf(location.host) < 0){
+			a.target = '_blank';
+			a.nofollow = 'nofollow';
+		}
+	});
+});
