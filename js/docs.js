@@ -79,13 +79,6 @@ angular.module('DocsController', [])
     };
   };
 
-
-
-  $scope.$on('$includeContentLoaded', function() {
-    var pagePath = $scope.currentPage ? $scope.currentPage.path : $location.path();
-    $window._gaq.push(['_trackPageview', pagePath]);
-  });
-
   $scope.$watch(function docsPathWatch() {return $location.path(); }, function docsPathWatchAction(path) {
 
     path = path.replace(/^\/?(.+?)(\/index)?\/?$/, '$1');

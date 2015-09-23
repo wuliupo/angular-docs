@@ -33,13 +33,13 @@
       addTag('link', {rel: 'stylesheet', href: 'css/animations.css', type: 'text/css'});
       
 
-      addTag('script', {src: '../angular.min.js' }, sync);
-      addTag('script', {src: '../angular-resource.min.js' }, sync);
-      addTag('script', {src: '../angular-route.min.js' }, sync);
-      addTag('script', {src: '../angular-cookies.min.js' }, sync);
-      addTag('script', {src: '../angular-sanitize.min.js' }, sync);
-      addTag('script', {src: '../angular-touch.min.js' }, sync);
-      addTag('script', {src: '../angular-animate.min.js' }, sync);
+      addTag('script', {src: 'dist/angular.min.js' }, sync);
+      addTag('script', {src: 'dist/angular-resource.min.js' }, sync);
+      addTag('script', {src: 'dist/angular-route.min.js' }, sync);
+      addTag('script', {src: 'dist/angular-cookies.min.js' }, sync);
+      addTag('script', {src: 'dist/angular-sanitize.min.js' }, sync);
+      addTag('script', {src: 'dist/angular-touch.min.js' }, sync);
+      addTag('script', {src: 'dist/angular-animate.min.js' }, sync);
       addTag('script', {src: 'components/marked-0.3.3/lib/marked.js' }, sync);
       addTag('script', {src: 'js/angular-bootstrap/bootstrap.min.js' }, sync);
       addTag('script', {src: 'js/angular-bootstrap/dropdown-toggle.min.js' }, sync);
@@ -74,17 +74,6 @@
                 return h;
             })(node);
       }
-    })();
-
-    // GA asynchronous tracker
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-8594346-3']);
-    _gaq.push(['_setDomainName', '.angularjs.org']);
-
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
     })();
   </script>
 </head>
